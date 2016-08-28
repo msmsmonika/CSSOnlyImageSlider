@@ -1,0 +1,214 @@
+*
+{
+	box-sizing: border-box;
+	font-family: 'Roboto', sans-serif;
+}
+body
+{
+	width: 100%;
+	padding: 0;
+	margin:0;
+}
+.sliderWrap {
+	width: 100%;
+	height: 500px;
+	overflow: hidden;
+	position: absolute;
+}
+.eachSlide
+{
+	width: 100%;
+	height: 100%;
+	overflow: hidden;
+	position: absolute;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+
+}
+.sliderWrap [id^='slide']:target img
+{
+	opacity: 1;
+}
+
+.sliderWrap [id^='slide'] img
+{
+	width: 100%;
+	height: auto;
+	position: absolute;
+	opacity: 0;
+   -moz-transition: opacity 1s ease-in;
+	-ms-transition: opacity 1s ease-in;
+	-webkit-transition: opacity 1s ease-in;
+	-o-transition: opacity 1s ease-in;
+
+}
+
+.sliderWrap [id^='slide']:target .slideCotentBig
+{
+	top: 20%;
+}
+
+.sliderWrap [id^='slide'] .slideCotentBig {
+	position: absolute;
+	width: 40%;
+	min-width: 450px;
+	max-width: 470px;
+	top: 20%;
+	background-color: #3333336b;
+	background-color: rgba(0, 0, 0, 0.48);
+	color: #cff5b9;
+	padding: 1%;
+	text-align: center;
+	top:-700px;
+ -moz-transition: top 1.5s ease-in;
+	-ms-transition: top 1.5s ease-in;
+	-webkit-transition: top 1.5s ease-in;
+	-o-transition: top 1.5s ease-in;
+}
+
+
+.slideCotentBig>span>h2
+{
+	font-weight: normal;
+}
+.sliderWrap [id^='slide']:target .slideCotentSub
+{
+	bottom:230px ;
+}
+
+.sliderWrap [id^='slide'] .slideCotentSub {
+	position: absolute;
+	width: 30%;
+	min-width: 340px;
+	max-width: 370px;
+	/*top: 42%;*/
+	background-color: #3333336b;
+	background-color: #cff5b9;
+	color: #000;
+	padding: 0.5%;
+	bottom: -600px;
+	text-align: center;
+	-moz-transition: bottom 1.5s ease-in;
+	-ms-transition: bottom 1.5s ease-in;
+	-webkit-transition: bottom 1.5s ease-in;
+	-o-transition: bottom 1.5s ease-in;
+}
+.controls
+{
+	position: absolute;
+	top: 400px;
+	width: 30%;
+	margin: 0 35%;
+	text-align: center;
+	font-size: 3em;
+}
+.controls .pageButton,.controls .pageButton:visited
+{
+	text-decoration: none;
+	  color: rgba(100, 100, 105, 0.97);
+    font-size: 1.4em;
+}
+.controls .pageButton:active,.controls .pageButton:focus
+{
+	color:#cff5b9;
+}
+.sliderWrap .controls .pageButton:first-of-type, 
+.sliderWrap .slide-operator:nth-of-type(1):target ~ .controls .pageButton:nth-of-type(1),
+.sliderWrap .slide-operator:nth-of-type(2):target ~ .controls .pageButton:nth-of-type(2),
+.sliderWrap .slide-operator:nth-of-type(3):target ~ .controls .pageButton:nth-of-type(3),
+.sliderWrap .slide-operator:nth-of-type(4):target ~ .controls .pageButton:nth-of-type(4)
+{
+	color:#cff5b9;
+}
+.sliderWrap .slide-operator:nth-of-type(2):target ~ .controls .pageButton:nth-of-type(1),
+.sliderWrap .slide-operator:nth-of-type(3):target ~ .controls .pageButton:nth-of-type(1),
+.sliderWrap .slide-operator:nth-of-type(4):target ~ .controls .pageButton:nth-of-type(1)
+{
+	  color: rgba(100, 100, 105, 0.97);
+    font-size: 1.4em;
+}
+
+span.leftArrows {
+    position: fixed;
+    left: 3%;
+    top: 180px;
+}
+/*a.leftArrow {
+    position: absolute;
+    left: 0;
+}*/
+span.rightArrows {
+    position: fixed;
+    right: 3%;
+    top: 180px;
+}
+/*a.rightArrow {
+    position: absolute;
+    right: 0;
+}*/
+/*.leftArrows,.rightArrows
+{
+	    background: #cff5b9;
+    padding: 24px;
+    text-align: center;
+    display: flex;
+    align-items: center;
+}*/
+.rightArrow,.leftArrow
+{
+	text-decoration: none;
+    font-size: 0.6em;
+    font-weight: normal;
+    line-height: 15px;
+    padding: 21px;
+    border-radius: 50%;
+    background: #cff5b9;
+    color: #000;
+}
+
+.sliderWrap .slide-operator:nth-of-type(2):target ~ .controls .leftArrows .leftArrow:nth-of-type(1),
+.sliderWrap .slide-operator:nth-of-type(3):target ~ .controls .leftArrows .leftArrow:nth-of-type(2),
+.sliderWrap .slide-operator:nth-of-type(4):target ~ .controls .leftArrows .leftArrow:nth-of-type(3)
+{
+	display: block;
+}
+.sliderWrap .slide-operator:nth-of-type(1):target ~ .controls .leftArrows .leftArrow:nth-of-type(1),
+.sliderWrap .slide-operator:nth-of-type(1):target ~ .controls .leftArrows .leftArrow:nth-of-type(4),
+.sliderWrap .slide-operator:nth-of-type(1):target ~ .controls .leftArrows .leftArrow:nth-of-type(2),
+.sliderWrap .slide-operator:nth-of-type(1):target ~ .controls .leftArrows .leftArrow:nth-of-type(3),
+.sliderWrap .slide-operator:nth-of-type(2):target ~ .controls .leftArrows .leftArrow:nth-of-type(2),
+.sliderWrap .slide-operator:nth-of-type(2):target ~ .controls .leftArrows .leftArrow:nth-of-type(3),
+.sliderWrap .slide-operator:nth-of-type(2):target ~ .controls .leftArrows .leftArrow:nth-of-type(4),
+.sliderWrap .slide-operator:nth-of-type(3):target ~ .controls .leftArrows .leftArrow:nth-of-type(1),
+.sliderWrap .slide-operator:nth-of-type(3):target ~ .controls .leftArrows .leftArrow:nth-of-type(3),
+.sliderWrap .slide-operator:nth-of-type(3):target ~ .controls .leftArrows .leftArrow:nth-of-type(4),
+.sliderWrap .slide-operator:nth-of-type(4):target ~ .controls .leftArrows .leftArrow:nth-of-type(1),
+.sliderWrap .slide-operator:nth-of-type(4):target ~ .controls .leftArrows .leftArrow:nth-of-type(2),
+.sliderWrap .slide-operator:nth-of-type(4):target ~ .controls .leftArrows .leftArrow:nth-of-type(4)
+{
+display: none;
+}
+
+.sliderWrap .slide-operator:nth-of-type(1):target ~ .controls .rightArrows .rightArrow:nth-of-type(2),
+.sliderWrap .slide-operator:nth-of-type(2):target ~ .controls .rightArrows .rightArrow:nth-of-type(3),
+.sliderWrap .slide-operator:nth-of-type(3):target ~ .controls .rightArrows .rightArrow:nth-of-type(4)
+{
+	display: block;
+}
+.sliderWrap .slide-operator:nth-of-type(1):target ~ .controls .rightArrows .rightArrow:nth-of-type(4),
+.sliderWrap .slide-operator:nth-of-type(1):target ~ .controls .rightArrows .rightArrow:nth-of-type(1),
+.sliderWrap .slide-operator:nth-of-type(1):target ~ .controls .rightArrows .rightArrow:nth-of-type(3),
+.sliderWrap .slide-operator:nth-of-type(2):target ~ .controls .rightArrows .rightArrow:nth-of-type(1),
+.sliderWrap .slide-operator:nth-of-type(2):target ~ .controls .rightArrows .rightArrow:nth-of-type(2),
+.sliderWrap .slide-operator:nth-of-type(2):target ~ .controls .rightArrows .rightArrow:nth-of-type(4),
+.sliderWrap .slide-operator:nth-of-type(3):target ~ .controls .rightArrows .rightArrow:nth-of-type(1),
+.sliderWrap .slide-operator:nth-of-type(3):target ~ .controls .rightArrows .rightArrow:nth-of-type(2),
+.sliderWrap .slide-operator:nth-of-type(3):target ~ .controls .rightArrows .rightArrow:nth-of-type(3),
+.sliderWrap .slide-operator:nth-of-type(4):target ~ .controls .rightArrows .rightArrow:nth-of-type(1),
+.sliderWrap .slide-operator:nth-of-type(4):target ~ .controls .rightArrows .rightArrow:nth-of-type(2),
+.sliderWrap .slide-operator:nth-of-type(4):target ~ .controls .rightArrows .rightArrow:nth-of-type(3),
+.sliderWrap .slide-operator:nth-of-type(4):target ~ .controls .rightArrows .rightArrow:nth-of-type(4)
+{
+display: none;
+}
