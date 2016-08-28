@@ -22,7 +22,6 @@ body
 	overflow: hidden;
 	position: absolute;
 	display: flex;
-	align-items: center;
 	justify-content: center;
 
 }
@@ -43,7 +42,10 @@ body
 	-o-transition: opacity 1s ease-in;
 
 }
-
+#slide-1 img
+{
+	opacity: 1;
+}
 .sliderWrap [id^='slide']:target .slideCotentBig
 {
 	top: 20%;
@@ -166,6 +168,20 @@ span.rightArrows {
     background: #cff5b9;
     color: #000;
 }
+.controls .leftArrows .leftArrow:nth-of-type(1),
+.controls .leftArrows .leftArrow:nth-of-type(2),
+.controls .leftArrows .leftArrow:nth-of-type(3),
+.controls .leftArrows .leftArrow:nth-of-type(4),
+.controls .rightArrows .rightArrow:nth-of-type(4),
+.controls .rightArrows .rightArrow:nth-of-type(3),
+.controls .rightArrows .rightArrow:nth-of-type(2)
+{
+	display: none;
+}
+.controls .rightArrows .rightArrow:nth-of-type(1)
+{
+	display: block;
+	}
 
 .sliderWrap .slide-operator:nth-of-type(2):target ~ .controls .leftArrows .leftArrow:nth-of-type(1),
 .sliderWrap .slide-operator:nth-of-type(3):target ~ .controls .leftArrows .leftArrow:nth-of-type(2),
